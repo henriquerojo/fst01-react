@@ -1,4 +1,6 @@
-import Card from "./components/Card";
+
+import Card from "./components/card/Card";
+import "./App.css";
 
 export default function App() {
   const users = [
@@ -19,12 +21,15 @@ export default function App() {
     },
   ];
 
-  const user = users[0];
-
   return (
-    <>  
-      <div>
-        <Card name={user.name} imageUrl={user.imageUrl}/>
+    <>
+      <div className="list-users">
+      {
+        users.map((user) => {
+          return <Card key={user.id} userData={user}/>;
+        })
+        // <Card name={user.name} imageUrl={user.imageUrl}/>
+      }
       </div>
     </>
   )
