@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import ButtonFollow from '../ButtonFollow/ButtonFollow.jsx';
+import { VscCopilot } from "react-icons/vsc";
 import './card.css';
 
 function Card (props) {
@@ -10,6 +11,7 @@ function Card (props) {
     {
         console.log("UserName: ", userName);
         setFollowState(!followState);
+        props.changeCount(!followState);
     }
 
     return (
@@ -19,6 +21,7 @@ function Card (props) {
             <img src={props.userData.imageUrl} alt="" />
             <div className="actions">
                 <button type="button" onClick={() => handleClick(props.userData.name)}>
+                    <VscCopilot/>
                     <ButtonFollow isFollowing={followState} />
                 </button>
             </div>

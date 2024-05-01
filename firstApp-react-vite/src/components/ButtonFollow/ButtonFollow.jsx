@@ -1,7 +1,7 @@
-function ButtonFollow(isFollowing)
+function ButtonFollow(props)
 {
     return (
-        <span>{ isFollowing ? 'Seguindo' : 'Seguir' }</span>
+        <span>{ props.isFollowing ? 'Seguindo' : 'Seguir' }</span>
     )
 }
 
